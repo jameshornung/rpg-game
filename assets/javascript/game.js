@@ -74,6 +74,7 @@ var playerChosen = false;
 var opponentChosen = false;
 var userPlayer;
 var currentOpponent;
+var startingValue;
 
 
 
@@ -115,6 +116,7 @@ var currentOpponent;
 			
 			$("#info-box").text(userPlayer.name + " vs ");
 			$("#player-box").append("Health: " + userPlayer.health);
+			startingValue = userPlayer.attack;
 		}
 
 		//once a player is selected, this will allow an opponent to be chosen from the remaining three characters
@@ -139,14 +141,47 @@ var currentOpponent;
 				currentOpponent = charles;
 			};
 			$("#info-box").text(userPlayer.name + " vs " + currentOpponent.name);
+			$("#adversary-box").append("Health: " + currentOpponent.health);
 		}
 	});
 
 
 	//this will be the actions taken when the attack button is pressed
-	// $(".attack-button").click(function(e)
-	
+	$(".attack-button").click(function(e)
+	{
+		if(currentOpponent.health > 0)
+		{
+			currentOpponent.health = currentOpponent.health - userPlayer.attack;
+			userPlayer.attack = userPlayer.attack + startingValue;
+			console.log(currentOpponent.health);
+			console.log(userPlayer.attack);
 
+			if (currentOpponent.health <= 0)
+			{
+				alert("You have defeated the opponent.  Choose a new one to continue.")
+				opponentsDefeated = opponentsDefeated + 1;
+				opponentChosen = false;
+				$("#adversary-box").empty();
+
+				if (opponentsDefeated === 3)
+				{
+					alert("congratulations! you win")
+					opponentsDefeated = 0;
+					playerChosen = false;
+					opponentChosen = false;
+					userPlayer;
+					currentOpponent;
+					startingValue;
+					$("#adversary-box").empty();
+					$("#player-box").empty();
+				}
+			}
+			
+		}
+		
+	});
+
+	
 
 
 
