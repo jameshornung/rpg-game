@@ -14,7 +14,7 @@
 }
 
 .gameplay{
-	height: 200px;
+	height: 300px;
 }
 
 .first-row{
@@ -22,10 +22,15 @@
 }
 
 .second-row{
-	height: 200px;
+	height: 300px;
 }
 
 #info-box{
-	border: 1px solid black;
+	height: 300px;
+}
+
+.btn{
+	display: block;
+	margin: 0 auto;
 }
 
