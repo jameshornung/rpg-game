@@ -1,55 +1,109 @@
-var players = {
+//Global Variables
+//___________________________________________________________________________
 	
-	watt: {
-		name: "JJ Watt",
-		hp: 100,
-		attack: 5,
-		counter: 15,
-	},
+//available characters as an array
+// var players = [
+// 	{
+// 	name: "JJ Watt",
+// 	health: 100,
+// 	attack: 5,
+// 	counter: 15
+// 	userPlayer: false
+// 	currentOpponent: false
+// 	},
 
-	rodgers: {
-	name: "Aaron Rodgers",
-	hp: 100,
-	attack: 5,
-	counter: 15,
-	},
+// 	{
+// 	name: "Aaron Rodgers",
+// 	health: 100,
+// 	attack: 5,
+// 	counter: 15,
+// 	userPlayer: false,
+// 	currentOpponent: false
+// 	},
 
-	bryant: {
-	name: "Dez Bryant",
-	hp: 100,
-	attack: 5,
-	counter: 15,
-	},
+// 	{
+// 	name: "Dez Bryant",
+// 	health: 100,
+// 	attack: 5,
+// 	counter: 15,
+// 	userPlayer: false,
+// 	currentOpponent: false
+// 	},
 
-	charles: {
-	name: "Jamaal Charles",
-	hp: 100,
+// 	{
+// 	name: "Jamaal Charles",
+// 	health: 100,
+// 	attack: 5,
+// 	counter: 15,
+// 	userPlayer: false,
+// 	currentOpponent: false
+// 	}];
+
+//available characters as individual objects
+var watt = {
+	name: "JJ Watt",
+	health: 100,
 	attack: 5,
-	counter: 15,
-	}
+	counter: 15
 };
 
-var myPlayer;
 
-// $(".player-pic").click(function(e){
-// 	if (this){
-// 		$(".player-box").append(this);
-// 		$(this).addClass("player");
-// 		}
-// 	else{
-// 		$(".player-pic").appendTo(".opponents-box").addClass("opponent");
-// 	}
-// });
+var opponentsDefeated = 0;
+var playerChosen = false;
+var opponentChosen = false;
+var userPlayer;
 
-$(".player-pic").click(function(event){
-		$("#player-box").append(this).removeClass("player-pic").addClass("player");
-		// $(".player-pic").addClass("opponent").appendTo("#opponents-box");
-		// myPlayer = (this);
-		// console.log(myPlayer);
-});
 
-// $(".opponent").click(function(e){
-// 	$(".adversary-box").append(this).addClass("currentAdversary");
-// 	console.log("test");
-// });
+
+
+//Functions
+//_____________________________________________________________________________
+
+
+
+//General Code
+//______________________________________________________________________________
+
+	$(".player-pic").click(function(event)
+	{
+		if (playerChosen === false && opponentChosen === false)
+		{
+			//move players to their designated positions 
+			$(this).appendTo("#player-box").removeClass("opponents").addClass("player");
+			$(".opponents").appendTo("#opponents-box");
+			playerChosen = true;
+			//assign selected player (object) to the userplayer variable
+		// 	if ($(this).hasClass("watt"))
+		// 	{
+		// 		userPlayer = watt;
+		// 	};
+		// 	if ($(this).hasClass("rodgers"))
+		// 	{
+		// 		userPlayer = rodgers;
+		// 	};
+		// 	if ($(this).hasClass("bryant"))
+		// 	{
+		// 		userPlayer = bryant;
+		// 	};
+		// 	if ($(this).hasClass("charles"))
+		// 	{
+		// 		userPlayer = charles;
+		// 	};
+		// 	console.log(userPlayer);
+		};
+
+		if (playerChosen === true && opponentChosen === false)
+		{
+			$(this).appendTo("#adversary-box");
+			opponentChosen = true;
+		}
+	});
+	//this will be the actions taken when the attack button is pressed
+	// $(".attack-button").click(function(e)
+	
+
+
+
+
+
 
