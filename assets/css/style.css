@@ -23,25 +23,34 @@
 	font-size: 15px;
 	line-height: 20px;
 	text-align: center;
+	font-family: "rock salt";
 }
 
 #player-box{
 	text-align: center;
 	padding-top: 10px;
+	font-family: "Roboto Mono";
+	color: green;
+	font-size: 11px;
 }
 
 #adversary-box{
 	text-align: center;
 	padding-top: 10px;
+	font-family: "Roboto Mono";
+	color: green;
+	font-size: 11px;
 }
 
 h1{
 	text-align: center;
 	font-size: 45px;
+	font-family: "Roboto Mono";
 }
 
 .notifications{
 	line-height: 35px;
+	font-family: "Permanent Marker";
 
 }
 

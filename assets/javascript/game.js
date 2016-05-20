@@ -55,6 +55,8 @@ function reset(){
 	startingValue;
 	$("#adversary-box").empty();
 	$("#player-box").empty();
+	$(".info-box").empty();
+	$("#opponents-box").empty();
 }
 
 
@@ -151,7 +153,7 @@ $("#adversary-box").html(opponentImage).append("Health: " + currentOpponent.heal
 	{
 		$(".notifications").text("Congratulations! You Win");
 		$("#info-box").text("");
-		
+		$(".player").animate({height: '500px'});
 	}
 
 //check to see if the user player has been defeated
