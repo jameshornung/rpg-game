@@ -55,7 +55,7 @@ function reset(){
 	startingValue;
 	$("#adversary-box").empty();
 	$("#player-box").empty();
-	$(".info-box").empty();
+	$("#info-box").empty();
 	$("#opponents-box").empty();
 }
 
@@ -165,6 +165,11 @@ $("#adversary-box").html(opponentImage).append("Health: " + currentOpponent.heal
 		
 }	
 
+});
+
+$(".reset-button").click(function(e)
+{
+	location.reload();
 });
 
 	
